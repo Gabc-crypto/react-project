@@ -1,7 +1,12 @@
+import { Outlet } from "react-router-dom";
+import PersistentDrawerLeft from "../components/persistentDrawer";
+
 export const Root = () => {
     return (
         <>
-            <h1>Página principal da aplicação</h1>
+            <PersistentDrawerLeft>
+                <Outlet/>
+            </PersistentDrawerLeft>
         </>
     );
 };

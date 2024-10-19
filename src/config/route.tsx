@@ -10,10 +10,6 @@ import Root from "../pages/root";
 
 const routes = [
   {
-    path: "/",
-    element: <Root />
-  },
-  {
     path: "login/:login-professorId",
     element: <LoginProfessor />
   },
@@ -30,7 +26,12 @@ const routes = [
 const router = createBrowserRouter(
     createRoutesFromElements(
         (routes.map((route, index) => {
-            return <Route path={route.path} element={route.element}/>
+
+            return (
+              <Route path="/" element={<Root/>}>
+                <Route path={route.path} element={route.element}/>
+              </Route>
+            )
         }))
     )
 );
